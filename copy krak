@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MY HTML</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+        line-height: 1.6;
+        color: #221a1a;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      header {
+        background-color: #4CAF50;
+        color: rgb(255, 2, 2);
+        padding: 10px 0;
+        text-align: center;
+      }
+      nav {
+        margin: 0px;
+      }
+      footer {
+        text-align: center;
+        padding: 20px 0;
+        background-color: #333;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div>
+      <header>
+        <h1>Welcome to My HTML Page</h1>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+
+      </nav>
+      <footer>
+
+
+
+      </footer>
+    </div>
+  </body>
+</html>
