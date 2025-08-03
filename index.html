@@ -1,69 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY HTML101</title>
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-    body {
-        font-family: 'Roboto', sans-serif;
-        line-height: 1.6;
-        color: #221a1a;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-      }
-      header {
-        background-color: #4CAF50;
-        color: rgb(255, 2, 2);
-        padding: 10px 0;
-        text-align: center;
-      }
-      nav {
-        margin: 0px;
-      }
-      footer {
-        text-align: center;
-        padding: 20px 0;
-        background-color: #333;
-        color: white;
-      }
-      </style>
-  </head>
-  <body>
-    
-    <div>
-      <header>
-    <title>HTML101</title>
-            <h1>Hello HTML101</h1>
-        </header>
-        <nav>
-            Navigation Area
-        </nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/">About</a></li>
-                <li><a href="/">Contact</a></li>
-            <ul>
-        </nav>
-        <div>
-            Main Content Area
-        <p>สวัสดีวันจันทร์</p>
-        <h2>คณะวิทยาศาสร์<h2>
-        <p>สาขาวิทยาการคอมพิวเตอร์</p>
-        <img src="Downloads/cat yawn.webp" alt="แมวหาว" width="300" height="200">
-        <div>
-            <h3>วันที่/เดือน/ปี</p>
-            <h3>ข่าวสอง</h3>
-            <h3>ข่าวสาม</h3>
-        </div>
+    <title>จัดการสต็อกสินค้า</title>
+    <link rel="stylesheet" href="/Webdev/CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
-        <footer>
-            Footer Area
-        </footer>
+    <header class="header">
+        <h1 class="logo">ระบบจัดการสินค้า</h1>
+        <a href="/Webdev/catalog/catalog.html" class="nav-item">แบบฟอร์มการสั่งซื้อสินค้า</a>
+    </header>
 
-    </div>
+    <main class="dashboard-container">
+        <aside class="sidebar">
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active" data-page="products">รายการสินค้า</a>
+                <a href="#" class="nav-item" data-page="add-product">เพิ่มสินค้าใหม่</a>
+                <a href="#" class="nav-item" data-page="categories">จัดการหมวดหมู่</a>
+            </nav>
+        </aside>
+
+        <section class="content-area">
+
+            <div id="products-page" class="page-content active">
+                <h2>รายการสินค้าทั้งหมด</h2>
+                <div class="product-list-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>รูปภาพ</th>
+                                <th>รหัสสินค้า</th>
+                                <th>ชื่อสินค้า</th>
+                                <th>หมวดหมู่</th>
+                                <th>รายละเอียด</th>
+                                <th>การจัดการ</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productTableBody">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="add-product-page" class="page-content">
+                <h2>เพิ่มสินค้าใหม่</h2>
+                <form id="addProductForm" class="form-card">
+                    <div class="form-group">
+                        <label for="productName">ชื่อสินค้า</label>
+                        <input type="text" id="productName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productCategory">หมวดหมู่</label>
+                        <select id="productCategory" required>
+                            <option value="">-- เลือกหมวดหมู่ --</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>ข้อมูลขนาดสินค้า</label>
+                        <div id="variants-container">
+                            </div>
+                        <button type="button" id="addVariantButton" class="btn-secondary">เพิ่มขนาด</button>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productImage">รูปภาพสินค้า</label>
+                        <input type="file" id="productImage" accept="image/*" required>
+                    </div>
+                    <div class="form-group">
+                        <div id="image-preview" class="image-preview-container">
+                            <p>ไม่มีรูปภาพ</p>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary">เพิ่มสินค้า</button>
+                </form>
+            </div>
+
+            <div id="categories-page" class="page-content">
+                <h2>จัดการหมวดหมู่</h2>
+                <div class="form-card">
+                    <h3>เพิ่มหมวดหมู่ใหม่</h3>
+                    <form id="addCategoryForm">
+                        <div class="form-group">
+                            <label for="newCategoryName">ชื่อหมวดหมู่</label>
+                            <input type="text" id="newCategoryName" required>
+                        </div>
+                        <button type="submit" class="btn-primary">เพิ่มหมวดหมู่</button>
+                    </form>
+                </div>
+                
+                <div class="form-card mt-20">
+                    <h3>หมวดหมู่ที่มีอยู่</h3>
+                    <ul id="categoryList" class="category-list">
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="/Webdev/js/script.js"></script>
 </body>
-
 </html>
